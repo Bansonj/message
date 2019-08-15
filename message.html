@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Message</title>
+    <link rel="stylesheet" href="message.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Type your messages here</h1>
+        <input type="text" name="message" class="message">
+        <button type="button" class="btn">Send Your Message</button>
+        <h1>Read Message</h1>
+        <h1 class="showMessage"></h1>
+    </div>
+
+    <script>
+        const button = document.querySelector('.btn');
+        const send = document.querySelector('.message');
+        const receive = document.querySelector('.showMessage');
+
+        button.addEventListener('click', () => {
+            let output = send.value;
+
+            // console.log(output);
+            if (output == '') {
+                alert('Please Enter Message');
+            } else {
+                receive.innerHTML = output;
+                send.value = '';
+            }
+
+        });
+    </script>
+</body>
+
+</html>
